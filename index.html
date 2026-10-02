@@ -4,10 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intel Sustainability Through the Ages</title>
+    <link
+      id="bootstrap-css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="hero">
+      <div class="language-switcher">
+        <label for="language-picker">Language</label>
+        <select class="form-select" id="language-picker" aria-label="Choose language">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="zh">简体中文</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
       <div class="hero-inner">
         <div class="hero-copy">
           <img
@@ -223,8 +243,116 @@
           </article>
         </div>
       </section>
+
+      <!-- Bootstrap container and row create a responsive section below the timeline. -->
+      <section class="container py-5" aria-labelledby="updates-title">
+        <h2 class="mb-4" id="updates-title">Sustainability Updates</h2>
+        <div class="row g-4">
+          <!-- Each column fills one, two, or three columns at responsive breakpoints. -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="h-100 rounded border bg-white p-4">
+              <h3 class="h5">Climate Action</h3>
+              <p class="mb-0">Learn how Intel is working toward net-zero emissions across its global operations.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="h-100 rounded border bg-white p-4">
+              <h3 class="h5">Water Stewardship</h3>
+              <p class="mb-0">Read about efforts to conserve water and restore it to local communities.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="h-100 rounded border bg-white p-4">
+              <h3 class="h5">Get Updates</h3>
+              <p>Receive sustainability news by email.</p>
+              <form id="newsletter-form" method="post">
+                <label class="form-label" for="newsletter-email">Email address</label>
+                <p class="form-text" id="newsletter-help">Enter the email address where you want to receive updates.</p>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="newsletter-email"
+                  name="email"
+                  autocomplete="email"
+                  aria-describedby="newsletter-help"
+                  required
+                />
+                <button class="btn btn-primary mt-3" type="submit">Subscribe</button>
+                <p class="form-text mt-3" id="newsletter-status" role="status"></p>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="container pb-5" aria-labelledby="faq-title">
+        <h2 class="mb-3" id="faq-title">Sustainability FAQs</h2>
+        <div class="accordion" id="sustainabilityFaq">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq-heading-net-zero">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq-net-zero"
+                aria-expanded="true"
+                aria-controls="faq-net-zero"
+              >
+                What does Intel's net-zero goal mean?
+              </button>
+            </h3>
+            <div
+              class="accordion-collapse collapse show"
+              id="faq-net-zero"
+              aria-labelledby="faq-heading-net-zero"
+              data-bs-parent="#sustainabilityFaq"
+            >
+              <div class="accordion-body">
+                Intel aims to reach net-zero greenhouse gas emissions across its global operations by 2040.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq-heading-updates">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq-updates"
+                aria-expanded="false"
+                aria-controls="faq-updates"
+              >
+                Where can I get sustainability updates?
+              </button>
+            </h3>
+            <div
+              class="accordion-collapse collapse"
+              id="faq-updates"
+              aria-labelledby="faq-heading-updates"
+              data-bs-parent="#sustainabilityFaq"
+            >
+              <div class="accordion-body">
+                Use the newsletter form above to prepare an email subscription. The demo form still needs a service connected to process sign-ups.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <p class="scroll-note">Scroll to view the timeline | Hover over cards to learn more.</p>
+
+    <footer class="site-footer py-4">
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <p class="mb-0">&copy; 2026 Intel Corporation</p>
+        <nav aria-label="Footer navigation">
+          <ul class="d-flex flex-wrap justify-content-center gap-3 list-unstyled mb-0">
+            <li><a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy Policy</a></li>
+            <li><a href="https://www.intel.com/content/www/us/en/legal/terms-of-use.html">Terms of Use</a></li>
+            <li><a href="https://www.intel.com/content/www/us/en/company-overview/contact-us.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
