@@ -52,6 +52,7 @@ const arabicText = {
   "Email address": "عنوان البريد الإلكتروني",
   "Enter the email address where you want to receive updates.": "أدخل عنوان البريد الإلكتروني الذي ترغب في تلقي المستجدات عليه.",
   "Subscribe": "اشترك",
+  "Learn More": "اعرف المزيد",
   "Sustainability FAQs": "الأسئلة الشائعة حول الاستدامة",
   "What does Intel's net-zero goal mean?": "ماذا يعني هدف Intel للوصول إلى صافي انبعاثات صفري؟",
   "Intel aims to reach net-zero greenhouse gas emissions across its global operations by 2040.": "تهدف Intel إلى تحقيق صافي انبعاثات غازات دفيئة صفري في عملياتها حول العالم بحلول عام 2040.",

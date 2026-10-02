@@ -331,6 +331,23 @@ img {
   color: var(--intel-navy);
 }
 
+.heading-with-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.heading-with-icon > .bi {
+  flex: 0 0 auto;
+  color: var(--intel-blue);
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+.updates-heading h3 {
+  margin-bottom: 0.5rem;
+}
+
 .card-visual {
   position: relative;
   overflow: hidden;
@@ -346,36 +363,43 @@ img {
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.info-toggle {
+.learn-more-button {
   position: absolute;
   top: 12px;
-  right: 12px;
-  width: 34px;
-  height: 34px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  inset-inline-end: 12px;
+  min-height: 30px;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(0, 74, 143, 0.2);
+  border-radius: 999px;
+  background: white;
   color: var(--intel-blue-deep);
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   font-weight: 700;
   box-shadow: 0 8px 18px rgba(11, 31, 51, 0.18);
   cursor: pointer;
   z-index: 2;
+  white-space: nowrap;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.info-toggle:hover,
-.info-toggle:focus {
-  transform: scale(1.08);
-  background: white;
-  outline: none;
+.learn-more-button:hover,
+.learn-more-button:focus-visible {
+  transform: translateY(-1px);
+  background: #f4faff;
+}
+
+.learn-more-button:focus-visible {
+  outline: 3px solid var(--intel-blue-deep);
+  outline-offset: 2px;
 }
 
 .card-detail {
   position: absolute;
   left: 12px;
   right: 12px;
+  top: 3.25rem;
   bottom: 12px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -399,11 +423,12 @@ img {
   font-size: 1rem;
 }
 
-.info-toggle:hover + .card-detail,
-.info-toggle:focus + .card-detail,
+.learn-more-button:hover + .card-detail,
+.learn-more-button:focus + .card-detail,
 .card-visual:hover .card-detail {
   transform: translateY(0);
   opacity: 1;
+  pointer-events: auto;
 }
 
 .timeline-card:hover img {
